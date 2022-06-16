@@ -18,7 +18,6 @@ let summaryExchangetext = document.querySelector(".summaryExchange");
 form.addEventListener("input", () => {
     if (amountFirstcurrency.value > 0) {
         summaryExchangetext.style.display = "table-cell";
-    } else {
     }
     switch (firstCurrency.value) {
         case "PLN": {
@@ -70,3 +69,4 @@ function countingValue(rate) {
     amountRate.value = rate.toFixed(2);
     summaryExchangetext.innerHTML = (`${amountFirstcurrency.value} ${firstCurrency.value} = ${amountSecoundcurrency.value} ${secoundCurrency.value}`);
 }
+

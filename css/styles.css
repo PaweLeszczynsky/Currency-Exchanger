@@ -1,0 +1,116 @@
+html {
+    box-sizing: border-box;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+.bodyContainer {
+    background-color: rgb(100, 211, 255);
+    border-radius: 20px;
+    max-width: 80%;
+    padding: 50px;
+    margin: 0 auto;
+    margin-top: 50px;
+    min-height: 800px;
+    font-family: "Poppins", sans-serif;
+}
+
+.exchangerFieldset {
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.exchangerLegend {
+    padding: 20px;
+    text-align: center;
+}
+
+.exchangerField {
+    margin: 0 auto;
+    max-width: 1000px;
+    background-color: rgb(237, 250, 250);
+    padding: 50px;
+    border-radius: 20px;
+    margin-top: 80px;
+    box-shadow: 0px 0px 20px 2px rgb(117, 117, 117);
+}
+
+.firstCurrency,.secoundCurrency {
+    border: 2px solid black;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    height: 70px;
+    padding: 20px;
+    outline: none;
+    text-align: center;
+    margin-right: -3px;
+    background: rgb(34, 153, 195);
+    background: linear-gradient(0deg, rgba(34, 153, 195, 1) 0%, rgba(0, 249, 158, 1) 100%);
+}
+
+.amountFirstcurrency, .amountSecoundcurrency {
+    border: 2px solid black;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 70px;
+    outline: none;
+    padding: 20px;
+    text-align: center;
+    margin-left: -3px;
+    min-width: 100px;
+    width: 40%;
+    background: rgb(34, 153, 195);
+    background: linear-gradient(0deg, rgba(34, 153, 195, 1) 0%, rgba(0, 249, 158, 1) 100%);
+}
+
+.exchangeRate {
+    border: 2px solid black;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 20px;
+    height: 70px;
+    line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    min-width: 109px;
+    margin-right: -2px;
+    background: rgb(34, 153, 195);
+    background: linear-gradient(0deg, rgba(34, 153, 195, 1) 0%, rgba(0, 249, 158, 1) 100%);
+}
+
+.amountExchangerate {
+    border: 2px solid black;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 20px;
+    height: 70px;
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 100px;
+    width: 40%;
+    text-align: center;
+    background: rgb(34, 153, 195);
+    background: linear-gradient(0deg, rgba(34, 153, 195, 1) 0%, rgba(0, 249, 158, 1) 100%);
+}
+
+.summaryExchange {
+    border: 2px solid black;
+    border-radius: 20px;
+    height: 70px;
+    max-width: 600px;
+    background: rgb(34, 153, 195);
+    background: linear-gradient(0deg, rgba(34, 153, 195, 1) 0%, rgba(0, 249, 158, 1) 100%);
+    vertical-align: middle;
+    padding: 20px;
+    display: none;
+    text-align: center;
+}
+.amountSecoundcurrency:disabled{
+    color: black;
+}
+.amountExchangerate:disabled{
+    color: black;
+}

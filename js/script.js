@@ -67,6 +67,6 @@ function countingValue(rate) {
     }
     amountSecoundcurrency.value = (amountFirstcurrency.value * rate).toFixed(2);
     amountRate.value = rate.toFixed(2);
-    summaryExchangetext.innerHTML = (`${amountFirstcurrency.value} ${firstCurrency.value} = ${amountSecoundcurrency.value} ${secoundCurrency.value}`);
+    summaryExchangetext.innerHTML = firstCurrency.value === secoundCurrency.value ? `Choose another currency` : (`${amountFirstcurrency.value} ${firstCurrency.value} = ${amountSecoundcurrency.value} ${secoundCurrency.value}`);
 }
 

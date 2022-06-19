@@ -21,34 +21,35 @@
 
 <body>
     <div class="bodyContainer">
-        <form class="exchangerField">
-            <fieldset class="exchangerFieldset">
-                <legend class="exchangerLegend">Currency Exchanger</legend>
+        <form class="js-exchangerForm exchangerForm">
+            <fieldset class="exchangerForm__fieldset">
+                <legend class="exchangerForm__legend">Currency Exchanger</legend>
                 <p>
-                    <select class="firstCurrency" name="firstCurrency">
+                    <select class="js-exchangerForm__firstCurrency exchangerForm__selectCurrency" name="firstCurrency">
                         <option value="PLN" selected>PLN</option>
                         <option value="EURO">EURO</option>
                         <option value="USD">USD</option>
                         <option value="GBP">GBP</option>
                         <option value="CHF">CHF</option>
-                    </select> <input class="amountFirstcurrency" name="amountToexchange" type="number" min="0"
-                        step="0.01">
+                    </select> <input class="js-exchangerForm__amountFirstcurrency exchangerForm__amountCurrency"
+                        name="amountToexchange" type="number" min="0" step="0.01">
                 </p>
                 <p>
-                    <select class="secoundCurrency" name="secoundCurrency">
+                    <select class="js-exchangerForm__secoundCurrency exchangerForm__selectCurrency" name="secoundCurrency">
                         <option value="PLN">PLN</option>
                         <option value="EURO" selected>EURO</option>
                         <option value="USD">USD</option>
                         <option value="GBP">GBP</option>
                         <option value="CHF">CHF</option>
-                    </select> <input class="amountSecoundcurrency" name="amountExchanged" type="number" disabled
-                        value="0.00">
+                    </select> <input class="js-exchangerForm__amountSecoundcurrency exchangerForm__amountCurrency exchangerForm__disabledField"
+                        name="amountExchanged" type="number" disabled value="0.00">
                 </p>
                 <p>
-                    <label class="exchangeRate"><span>RATE</span></label><input class="amountExchangerate" disabled type="number"
-                        name="value" value="0.2099">
+                    <label class="exchangerForm__exchangeRate"><span>RATE</span></label><input
+                        class="js-exchangerForm__amountExchangerate exchangerForm__amountExchangerate exchangerForm__disabledField" disabled
+                        type="number" name="value" value="0.2099">
                 </p>
-                <div class="summaryExchange"> </div>
+                <div class="js-exchangerForm__summaryExchange exchangerForm__summaryExchange"> </div>
             </fieldset>
         </form>
     </div>

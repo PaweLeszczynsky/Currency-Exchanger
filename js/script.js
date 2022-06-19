@@ -6,14 +6,13 @@ let PLN_GBP = 0.1789;
 
 let rateToconvert;
 let rate;
-let firstCurrency = document.querySelector(".firstCurrency");
-let amountFirstcurrency = document.querySelector(".amountFirstcurrency")
-let secoundCurrency = document.querySelector(".secoundCurrency");
-let amountSecoundcurrency = document.querySelector(".amountSecoundcurrency");
-let exchangedValue = document.querySelector(".summaryExchange");
-let form = document.querySelector(".exchangerField");
-let amountRate = document.querySelector(".amountExchangerate");
-let summaryExchangetext = document.querySelector(".summaryExchange");
+let firstCurrency = document.querySelector(".js-exchangerForm__firstCurrency");
+let amountFirstcurrency = document.querySelector(".js-exchangerForm__amountFirstcurrency")
+let secoundCurrency = document.querySelector(".js-exchangerForm__secoundCurrency");
+let amountSecoundcurrency = document.querySelector(".js-exchangerForm__amountSecoundcurrency");
+let form = document.querySelector(".js-exchangerForm");
+let amountRate = document.querySelector(".js-exchangerForm__amountExchangerate");
+let summaryExchangetext = document.querySelector(".js-exchangerForm__summaryExchange");
 
 form.addEventListener("input", () => {
     if (amountFirstcurrency.value > 0) {
@@ -66,7 +65,7 @@ function countingValue(rate) {
         amountFirstcurrency.value = Math.abs(amountFirstcurrency.value);
     }
     amountSecoundcurrency.value = (amountFirstcurrency.value * rate).toFixed(2);
-    amountRate.value = rate.toFixed(2);
+    amountRate.value = rate.toFixed(4);
     summaryExchangetext.innerHTML = firstCurrency.value === secoundCurrency.value ? `Choose another currency` : (`${amountFirstcurrency.value} ${firstCurrency.value} = ${amountSecoundcurrency.value} ${secoundCurrency.value}`);
 }
 

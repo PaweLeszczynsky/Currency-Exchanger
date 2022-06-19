@@ -17,17 +17,17 @@ html {
     font-family: "Poppins", sans-serif;
 }
 
-.exchangerFieldset {
+.exchangerForm__fieldset {
     padding: 50px;
     border-radius: 20px;
 }
 
-.exchangerLegend {
+.exchangerForm__legend {
     padding: 20px;
     text-align: center;
 }
 
-.exchangerField {
+.exchangerForm {
     margin: 0 auto;
     max-width: 1000px;
     background-color: rgb(237, 250, 250);
@@ -37,7 +37,7 @@ html {
     box-shadow: 0px 0px 20px 2px rgb(117, 117, 117);
 }
 
-.firstCurrency,.secoundCurrency {
+.exchangerForm__selectCurrency {
     border: 2px solid black;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -50,7 +50,7 @@ html {
     background: linear-gradient(0deg, rgba(34, 153, 195, 1) 0%, rgba(0, 249, 158, 1) 100%);
 }
 
-.amountFirstcurrency, .amountSecoundcurrency {
+.exchangerForm__amountCurrency {
     border: 2px solid black;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
@@ -65,7 +65,7 @@ html {
     background: linear-gradient(0deg, rgba(34, 153, 195, 1) 0%, rgba(0, 249, 158, 1) 100%);
 }
 
-.exchangeRate {
+.exchangerForm__exchangeRate {
     border: 2px solid black;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -81,7 +81,7 @@ html {
     background: linear-gradient(0deg, rgba(34, 153, 195, 1) 0%, rgba(0, 249, 158, 1) 100%);
 }
 
-.amountExchangerate {
+.exchangerForm__amountExchangerate {
     border: 2px solid black;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
@@ -96,7 +96,7 @@ html {
     background: linear-gradient(0deg, rgba(34, 153, 195, 1) 0%, rgba(0, 249, 158, 1) 100%);
 }
 
-.summaryExchange {
+.exchangerForm__summaryExchange {
     border: 2px solid black;
     border-radius: 20px;
     height: 70px;
@@ -108,9 +108,6 @@ html {
     display: none;
     text-align: center;
 }
-.amountSecoundcurrency:disabled{
-    color: black;
-}
-.amountExchangerate:disabled{
+.exchangerForm__disabledField:disabled{
     color: black;
 }

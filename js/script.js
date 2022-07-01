@@ -1,12 +1,14 @@
 {
-    const firstCurrency = document.querySelector(".js-exchangerForm__firstCurrency");
-    const amountFirstcurrency = document.querySelector(".js-exchangerForm__amountFirstcurrency")
-    const secoundCurrency = document.querySelector(".js-exchangerForm__secoundCurrency");
-    const amountSecoundcurrency = document.querySelector(".js-exchangerForm__amountSecoundcurrency");
     const form = document.querySelector(".js-exchangerForm");
-    const summaryExchangetext = document.querySelector(".js-exchangerForm__summaryExchange");
 
-    const calculateAmount = (firstCurrencyValue, secoundCurrencyValue) => {
+    const hideShowExchangedAmountText = (amountFirstCurrencyValue) => {
+        const summaryExchangetext = document.querySelector(".js-exchangerForm__summaryExchange");
+        if (amountFirstCurrencyValue > 0) {
+            summaryExchangetext.style.display = "table-cell";
+        }
+    }
+
+    const calculateRate = (firstCurrencyValue, secoundCurrencyValue) => {
         let rateToconvert;
         const PLN_PLN = 1;
         const PLN_EURO = 0.2099;
@@ -49,24 +51,42 @@
         }
     }
 
-    form.addEventListener("input", () => {
-        const firstCurrencyValue = firstCurrency.value;
-        const secoundCurrencyValue = secoundCurrency.value;
-        if (amountFirstcurrency.value > 0) {
-            summaryExchangetext.style.display = "table-cell";
-        }
-        const result = calculateAmount(firstCurrencyValue, secoundCurrencyValue);
-        countingValue(result);
+    const amountRateText = (result) => {
+        const amountRate = document.querySelector(".js-exchangerForm__amountExchangerate");
+        amountRate.value = result.toFixed(4);
+    }
 
-    });
 
-    function countingValue(result) {
-        let amountRate = document.querySelector(".js-exchangerForm__amountExchangerate");
+
+    function convertNegativenumber() {
+        const amountFirstcurrency = document.querySelector(".js-exchangerForm__amountFirstcurrency")
         if (amountFirstcurrency.value < 0) { /*Zablokowanie wpisywania i przeliczania liczb ujemnych*/
             amountFirstcurrency.value = Math.abs(amountFirstcurrency.value);
         }
-        amountSecoundcurrency.value = (amountFirstcurrency.value * result).toFixed(2);
-        amountRate.value = result.toFixed(4);
-        summaryExchangetext.innerHTML = firstCurrency.value === secoundCurrency.value ? `Choose another currency` : (`${amountFirstcurrency.value} ${firstCurrency.value} = ${amountSecoundcurrency.value} ${secoundCurrency.value}`);
     }
+
+    const countingValue = (result, amountFirstCurrencyValue) => {
+        const amountSecoundcurrency = document.querySelector(".js-exchangerForm__amountSecoundcurrency");
+        amountSecoundcurrency.value = (amountFirstCurrencyValue * result).toFixed(2);
+    }
+
+    const exchangedValueText = (firstCurrencyValue, secoundCurrencyValue, amountFirstCurrencyValue) => {
+        const amountSecoundcurrency = document.querySelector(".js-exchangerForm__amountSecoundcurrency");
+        const summaryExchangetext = document.querySelector(".js-exchangerForm__summaryExchange");
+        summaryExchangetext.innerHTML = firstCurrencyValue === secoundCurrencyValue ? `Choose another currency` : (`${amountFirstCurrencyValue} ${firstCurrencyValue} = ${amountSecoundcurrency.value} ${secoundCurrencyValue}`);
+    }  
+    
+    form.addEventListener("input", () => {
+        const amountFirstcurrency = document.querySelector(".js-exchangerForm__amountFirstcurrency")
+        const firstCurrency = document.querySelector(".js-exchangerForm__firstCurrency");
+        const secoundCurrency = document.querySelector(".js-exchangerForm__secoundCurrency");
+        const firstCurrencyValue = firstCurrency.value;
+        const secoundCurrencyValue = secoundCurrency.value;
+        const amountFirstCurrencyValue = amountFirstcurrency.value;
+        hideShowExchangedAmountText(amountFirstCurrencyValue);
+        const result = calculateRate(firstCurrencyValue, secoundCurrencyValue);
+        amountRateText(result);
+        countingValue(result, amountFirstCurrencyValue);
+        exchangedValueText(firstCurrencyValue, secoundCurrencyValue, amountFirstCurrencyValue);
+    });
 }

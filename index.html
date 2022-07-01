@@ -34,7 +34,7 @@
                         <option value="GBP">GBP</option>
                         <option value="CHF">CHF</option>
                     </select> <input class="js-exchangerForm__amountFirstcurrency exchangerForm__amountCurrency"
-                        name="amountToexchange" type="number" min="0" step="0.01">
+                        name="amountToexchange" type="number" min="0" step="0.01" oninput="convertNegativenumber()">
                 </p>
                 <p>
                     <select class="js-exchangerForm__secoundCurrency exchangerForm__selectCurrency" name="secoundCurrency">

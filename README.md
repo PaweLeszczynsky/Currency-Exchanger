@@ -1,7 +1,7 @@
 # Currency Exchanger
 ## First look
 
-![ReadmeSS](../images/readmess.png)
+![ReadmeSS](https://github.com/PaweLeszczynsky/Currency-Exchanger/blob/main/images/readmess.png?raw=true)
 
 Link to website [CurrencyExchanger](https://paweleszczynsky.github.io/Currency-Exchanger)
 
@@ -17,5 +17,5 @@ The website allows exchange five currencies.
 
  Exchanger currency allows choose two types of currencies. First currency to exchange and secound target currency. After type any value the website automatically recalculates and presents the result. Additionally website shows the current exchange rate. After converting value, under rate value bar appears information bar and concludes currency exchange.
 
- ![Result of convert value](../images/readmevaluetxt.png)
+ ![Result of convert value](https://github.com/PaweLeszczynsky/Currency-Exchanger/blob/main/images/readmevaluetxt.png?raw=true)
  

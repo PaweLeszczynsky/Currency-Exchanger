@@ -1,7 +1,5 @@
 {
-    const form = document.querySelector(".js-exchangerForm");
-
-    const hideShowExchangedAmountText = (amountFirstCurrencyValue) => {
+    const showExchangedAmountText = (amountFirstCurrencyValue) => {
         const summaryExchangetext = document.querySelector(".js-exchangerForm__summaryExchange");
         if (amountFirstCurrencyValue > 0) {
             summaryExchangetext.style.display = "table-cell";
@@ -56,8 +54,6 @@
         amountRate.value = result.toFixed(4);
     }
 
-
-
     function convertNegativenumber() {
         const amountFirstcurrency = document.querySelector(".js-exchangerForm__amountFirstcurrency")
         if (amountFirstcurrency.value < 0) { /*Zablokowanie wpisywania i przeliczania liczb ujemnych*/
@@ -70,12 +66,13 @@
         amountSecoundcurrency.value = (amountFirstCurrencyValue * result).toFixed(2);
     }
 
-    const exchangedValueText = (firstCurrencyValue, secoundCurrencyValue, amountFirstCurrencyValue) => {
+    const exchangedAmountText = (firstCurrencyValue, secoundCurrencyValue, amountFirstCurrencyValue) => {
         const amountSecoundcurrency = document.querySelector(".js-exchangerForm__amountSecoundcurrency");
         const summaryExchangetext = document.querySelector(".js-exchangerForm__summaryExchange");
         summaryExchangetext.innerHTML = firstCurrencyValue === secoundCurrencyValue ? `Choose another currency` : (`${amountFirstCurrencyValue} ${firstCurrencyValue} = ${amountSecoundcurrency.value} ${secoundCurrencyValue}`);
     }  
-    
+
+    const form = document.querySelector(".js-exchangerForm");
     form.addEventListener("input", () => {
         const amountFirstcurrency = document.querySelector(".js-exchangerForm__amountFirstcurrency")
         const firstCurrency = document.querySelector(".js-exchangerForm__firstCurrency");
@@ -83,10 +80,10 @@
         const firstCurrencyValue = firstCurrency.value;
         const secoundCurrencyValue = secoundCurrency.value;
         const amountFirstCurrencyValue = amountFirstcurrency.value;
-        hideShowExchangedAmountText(amountFirstCurrencyValue);
+        showExchangedAmountText(amountFirstCurrencyValue);
         const result = calculateRate(firstCurrencyValue, secoundCurrencyValue);
         amountRateText(result);
         countingValue(result, amountFirstCurrencyValue);
-        exchangedValueText(firstCurrencyValue, secoundCurrencyValue, amountFirstCurrencyValue);
+        exchangedAmountText(firstCurrencyValue, secoundCurrencyValue, amountFirstCurrencyValue);
     });
 }

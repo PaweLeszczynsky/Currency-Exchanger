@@ -1,5 +1,5 @@
 # Currency Exchanger
-## First look
+## Preview
 
 ![ReadmeSS](https://github.com/PaweLeszczynsky/Currency-Exchanger/blob/main/images/readmess.png?raw=true)
 

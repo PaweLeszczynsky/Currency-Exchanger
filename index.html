@@ -18,6 +18,7 @@
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="css/styles.css" rel="stylesheet">
+    <link href="css/smartphones.css" rel="stylesheet">
     <script defer src="js/script.js"></script>
 </head>
 
@@ -26,7 +27,7 @@
         <form class="js-exchangerForm exchangerForm">
             <fieldset class="exchangerForm__fieldset">
                 <legend class="exchangerForm__legend">Currency Exchanger</legend>
-                <p>
+                <p class="exchangerForm__paragraph">
                     <select class="js-exchangerForm__firstCurrency exchangerForm__selectCurrency" name="firstCurrency">
                         <option value="PLN" selected>PLN</option>
                         <option value="EURO">EURO</option>
@@ -36,7 +37,7 @@
                     </select> <input class="js-exchangerForm__amountFirstcurrency exchangerForm__amountCurrency"
                         name="amountToexchange" type="number" min="0" step="0.01" oninput="convertNegativenumber()">
                 </p>
-                <p>
+                <p class="exchangerForm__paragraph">
                     <select class="js-exchangerForm__secoundCurrency exchangerForm__selectCurrency" name="secoundCurrency">
                         <option value="PLN">PLN</option>
                         <option value="EURO" selected>EURO</option>
@@ -46,12 +47,12 @@
                     </select> <input class="js-exchangerForm__amountSecoundcurrency exchangerForm__amountCurrency exchangerForm__disabledField"
                         name="amountExchanged" type="number" disabled value="0.00">
                 </p>
-                <p>
+                <p class="exchangerForm__paragraph">
                     <label class="exchangerForm__exchangeRate"><span>RATE</span></label><input
                         class="js-exchangerForm__amountExchangerate exchangerForm__amountExchangerate exchangerForm__disabledField" disabled
                         type="number" name="value" value="0.2099">
                 </p>
-                <div class="js-exchangerForm__summaryExchange exchangerForm__summaryExchange"> </div>
+                <div class="js-exchangerForm__summaryExchange exchangerForm__summaryExchange exchangerForm__paragraph"> </div>
             </fieldset>
         </form>
     </div>

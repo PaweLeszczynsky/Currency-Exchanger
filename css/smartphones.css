@@ -1,0 +1,51 @@
+@media (max-width:500px) {
+    .exchangerForm__selectCurrency {
+        border-radius: 20px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .exchangerForm__amountCurrency {
+        border: 2px solid black;
+        border-radius: 20px;
+        height: 70px;
+        outline: none;
+        padding: 20px;
+        text-align: center;
+        margin-left: -2px;
+        min-width: 100px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .exchangerForm__fieldset {
+        padding: 50px 8vw;
+        
+    }
+    .exchangerForm__exchangeRate {
+        
+        min-width: 50%;
+    }
+    .exchangerForm__amountExchangerate {
+        min-width: 50%;
+    }
+    .exchangerForm__paragraph{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 10px;
+        max-width: 200px;
+    }
+    
+    .exchangerForm__summaryExchange {
+                display: none;
+        
+    }
+}
+@media (max-width:350px) {
+    .exchangerForm__fieldset {
+        padding: 50px 0;
+        
+    }
+}

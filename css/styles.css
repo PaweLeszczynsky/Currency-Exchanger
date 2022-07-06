@@ -11,12 +11,8 @@ html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 20px;
-    max-width: 90%;
-    padding: 50px;
     margin: 0 auto;
-    margin-top: 50px;
-    min-height: 800px;
+    min-height: 100vh;
     font-family: "Poppins", sans-serif;
     display: flex;
     align-items: center;
@@ -113,6 +109,7 @@ html {
     display: none;
     text-align: center;
 }
-.exchangerForm__disabledField:disabled{
+
+.exchangerForm__disabledField:disabled {
     color: black;
 }

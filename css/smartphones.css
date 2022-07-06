@@ -20,16 +20,17 @@
 
     .exchangerForm__fieldset {
         padding: 50px 8vw;
-        
     }
+
     .exchangerForm__exchangeRate {
-        
         min-width: 50%;
     }
+
     .exchangerForm__amountExchangerate {
         min-width: 50%;
     }
-    .exchangerForm__paragraph{
+
+    .exchangerForm__paragraph {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -37,15 +38,14 @@
         margin: 10px;
         max-width: 200px;
     }
-    
+
     .exchangerForm__summaryExchange {
-                display: none;
-        
+        display: none;
     }
 }
+
 @media (max-width:350px) {
     .exchangerForm__fieldset {
         padding: 50px 0;
-        
     }
 }

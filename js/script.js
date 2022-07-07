@@ -1,19 +1,19 @@
 {
-    const showExchangedAmountText = (amountFirstCurrencyValue) => {
+    const showExchangedAmountText = (amountFirstcurrency) => {
         const summaryExchangetext = document.querySelector(".js-exchangerForm__summaryExchange");
-        if (amountFirstCurrencyValue > 0) {
+        if (amountFirstcurrency > 0) {
             summaryExchangetext.style.display = "table-cell";
         }
     }
 
-    const calculateRate = (firstCurrencyValue, secoundCurrencyValue) => {
+    const calculateRate = (firstCurrency, secoundCurrency) => {
         let rateToconvert;
         const PLN_PLN = 1;
         const PLN_EURO = 0.2099;
         const PLN_USD = 0.2194;
         const PLN_CHF = 0.2131;
         const PLN_GBP = 0.1789;
-        switch (firstCurrencyValue) {
+        switch (firstCurrency) {
             case "PLN": {
                 rateToconvert = PLN_PLN;
             } break;
@@ -30,7 +30,7 @@
                 rateToconvert = PLN_CHF;
             } break;
         }
-        switch (secoundCurrencyValue) {
+        switch (secoundCurrency) {
             case "PLN": {
                 return PLN_PLN / rateToconvert;
             }
@@ -61,29 +61,26 @@
         }
     }
 
-    const countingValue = (result, amountFirstCurrencyValue) => {
+    const countingValue = (result, amountFirstcurrency) => {
         const amountSecoundcurrency = document.querySelector(".js-exchangerForm__amountSecoundcurrency");
-        amountSecoundcurrency.value = (amountFirstCurrencyValue * result).toFixed(2);
+        amountSecoundcurrency.value = (amountFirstcurrency * result).toFixed(2);
     }
 
-    const exchangedAmountText = (firstCurrencyValue, secoundCurrencyValue, amountFirstCurrencyValue) => {
+    const exchangedAmountText = (firstCurrency, secoundCurrency, amountFirstcurrency) => {
         const amountSecoundcurrency = document.querySelector(".js-exchangerForm__amountSecoundcurrency");
         const summaryExchangetext = document.querySelector(".js-exchangerForm__summaryExchange");
-        summaryExchangetext.innerHTML = firstCurrencyValue === secoundCurrencyValue ? `Choose another currency` : (`${amountFirstCurrencyValue} ${firstCurrencyValue} = ${amountSecoundcurrency.value} ${secoundCurrencyValue}`);
+        summaryExchangetext.innerHTML = firstCurrency === secoundCurrency ? `Choose another currency` : (`${amountFirstcurrency} ${firstCurrency} = ${amountSecoundcurrency.value} ${secoundCurrency}`);
     }  
 
     const form = document.querySelector(".js-exchangerForm");
     form.addEventListener("input", () => {
-        const amountFirstcurrency = document.querySelector(".js-exchangerForm__amountFirstcurrency")
-        const firstCurrency = document.querySelector(".js-exchangerForm__firstCurrency");
-        const secoundCurrency = document.querySelector(".js-exchangerForm__secoundCurrency");
-        const firstCurrencyValue = firstCurrency.value;
-        const secoundCurrencyValue = secoundCurrency.value;
-        const amountFirstCurrencyValue = amountFirstcurrency.value;
-        showExchangedAmountText(amountFirstCurrencyValue);
-        const result = calculateRate(firstCurrencyValue, secoundCurrencyValue);
+        const amountFirstcurrency = document.querySelector(".js-exchangerForm__amountFirstcurrency").value;
+        const firstCurrency = document.querySelector(".js-exchangerForm__firstCurrency").value;
+        const secoundCurrency = document.querySelector(".js-exchangerForm__secoundCurrency").value;
+        showExchangedAmountText(amountFirstcurrency);
+        const result = calculateRate(firstCurrency, secoundCurrency);
         amountRateText(result);
-        countingValue(result, amountFirstCurrencyValue);
-        exchangedAmountText(firstCurrencyValue, secoundCurrencyValue, amountFirstCurrencyValue);
+        countingValue(result, amountFirstcurrency);
+        exchangedAmountText(firstCurrency, secoundCurrency, amountFirstcurrency);
     });
 }

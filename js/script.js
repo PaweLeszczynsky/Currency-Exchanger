@@ -72,8 +72,7 @@
         summaryExchangetext.innerHTML = firstCurrency === secoundCurrency ? `Choose another currency` : (`${amountFirstcurrency} ${firstCurrency} = ${amountSecoundcurrency.value} ${secoundCurrency}`);
     }
 
-    const form = document.querySelector(".js-exchangerForm");
-    form.addEventListener("input", () => {
+    const onFormSubmit = () =>{
         convertNegativenumber();
         const amountFirstcurrency = document.querySelector(".js-exchangerForm__amountFirstcurrency").value;
         const firstCurrency = document.querySelector(".js-exchangerForm__firstCurrency").value;
@@ -83,5 +82,11 @@
         amountRateText(result);
         countingValue(result, amountFirstcurrency);
         exchangedAmountText(firstCurrency, secoundCurrency, amountFirstcurrency);
-    });
+    }
+
+    const init = () => {
+        const form = document.querySelector(".js-exchangerForm");
+        form.addEventListener("input", onFormSubmit);
+    }
+    init();
 }

@@ -35,24 +35,27 @@
                         <option value="GBP">GBP</option>
                         <option value="CHF">CHF</option>
                     </select> <input class="js-exchangerForm__amountFirstcurrency exchangerForm__amountCurrency"
-                        name="amountToexchange" type="number" min="0" step="0.01" oninput="convertNegativenumber()">
+                        name="amountToexchange" type="number" min="0" step="0.01">
                 </p>
                 <p class="exchangerForm__paragraph">
-                    <select class="js-exchangerForm__secoundCurrency exchangerForm__selectCurrency" name="secoundCurrency">
+                    <select class="js-exchangerForm__secoundCurrency exchangerForm__selectCurrency"
+                        name="secoundCurrency">
                         <option value="PLN">PLN</option>
                         <option value="EURO" selected>EURO</option>
                         <option value="USD">USD</option>
                         <option value="GBP">GBP</option>
                         <option value="CHF">CHF</option>
-                    </select> <input class="js-exchangerForm__amountSecoundcurrency exchangerForm__amountCurrency exchangerForm__disabledField"
+                    </select> <input
+                        class="js-exchangerForm__amountSecoundcurrency exchangerForm__amountCurrency exchangerForm__disabledField"
                         name="amountExchanged" type="number" disabled value="0.00">
                 </p>
                 <p class="exchangerForm__paragraph">
                     <label class="exchangerForm__exchangeRate"><span>RATE</span></label><input
-                        class="js-exchangerForm__amountExchangerate exchangerForm__amountExchangerate exchangerForm__disabledField" disabled
-                        type="number" name="value" value="0.2099">
+                        class="js-exchangerForm__amountExchangerate exchangerForm__amountExchangerate exchangerForm__disabledField"
+                        disabled type="number" name="value" value="0.2099">
                 </p>
-                <div class="js-exchangerForm__summaryExchange exchangerForm__summaryExchange exchangerForm__paragraph"> </div>
+                <div class="js-exchangerForm__summaryExchange exchangerForm__summaryExchange exchangerForm__paragraph">
+                </div>
             </fieldset>
         </form>
     </div>

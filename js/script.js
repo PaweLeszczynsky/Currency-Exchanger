@@ -54,7 +54,7 @@
         amountRate.value = result.toFixed(4);
     }
 
-    function convertNegativenumber() {
+    const convertNegativenumber = () => {
         const amountFirstcurrency = document.querySelector(".js-exchangerForm__amountFirstcurrency")
         if (amountFirstcurrency.value < 0) { /*Zablokowanie wpisywania i przeliczania liczb ujemnych*/
             amountFirstcurrency.value = Math.abs(amountFirstcurrency.value);
@@ -70,10 +70,11 @@
         const amountSecoundcurrency = document.querySelector(".js-exchangerForm__amountSecoundcurrency");
         const summaryExchangetext = document.querySelector(".js-exchangerForm__summaryExchange");
         summaryExchangetext.innerHTML = firstCurrency === secoundCurrency ? `Choose another currency` : (`${amountFirstcurrency} ${firstCurrency} = ${amountSecoundcurrency.value} ${secoundCurrency}`);
-    }  
+    }
 
     const form = document.querySelector(".js-exchangerForm");
     form.addEventListener("input", () => {
+        convertNegativenumber();
         const amountFirstcurrency = document.querySelector(".js-exchangerForm__amountFirstcurrency").value;
         const firstCurrency = document.querySelector(".js-exchangerForm__firstCurrency").value;
         const secoundCurrency = document.querySelector(".js-exchangerForm__secoundCurrency").value;

@@ -48,4 +48,8 @@
     .exchangerForm__fieldset {
         padding: 50px 0;
     }
+    .exchangerForm__legend {
+        padding: 0 1%;
+        text-align: center;
+    }
 }

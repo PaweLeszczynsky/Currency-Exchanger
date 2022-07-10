@@ -121,3 +121,11 @@ html {
 .exchangerForm__disabledField:disabled {
     color: black;
 }
+
+.exchangerForm__summaryExchange--paragraph {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+}

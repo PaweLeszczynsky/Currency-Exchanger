@@ -2,7 +2,7 @@
     const showExchangedAmountText = (amountFirstcurrency) => {
         const summaryExchangetext = document.querySelector(".js-exchangerForm__summaryExchange");
         if (amountFirstcurrency > 0) {
-            summaryExchangetext.style.display = "table-cell";
+            summaryExchangetext.style.display = "flex";
         }
     }
 
